@@ -1,11 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shifumi</title>
+  
+    <!--Favicon-->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap"
+      rel="stylesheet">
+  
+    <title>Shifumi | Pierre, Feuille, Ciseaux</title>
 </head>
+
 <body>
-    
+    <header>
+        <h1><a href=""><img class="logo" src="assets/images/logo.svg" alt=""></a></h1>
+        <div class="score" data-toggle="modal" data-target="#game_score">
+            <p>Score</p>
+            <p>Cliquez pour voir le détail</p>
+            <p>0</p>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal" id="game_score" tabindex="-1" role="dialog" aria-labelledby="Score" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="score_title">Score</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <ul>
+                            <li id="win">Victoires : 0</li>
+                            <li id="defeat">Défaites: 0</li>
+                            <li id="tie">Egalités : 0</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of modal -->
+    </header>
+
+    <main>
+        <div class="sign__container">
+            <div class="sign__diagram">
+                <img src="assets/images/bg-triangle.svg" alt="diagram">
+            </div>
+            <div class="icon paper">
+                <img src="assets/images/icon-paper.svg" alt="paper">
+            </div>
+
+            <div class="icon scissors">
+                <img src="assets/images/icon-scissors.svg" alt="scissors">
+            </div>
+
+            <div class="icon rock">
+                <img src="assets/images/icon-rock.svg" alt="rock">
+            </div>
+        </div>
+
+        <div class="sign__select">
+            <div class="select__box user__choice">
+                <p class="select__title">Vous avez choisi</p>
+                <div id="user__choice" class="choice__icon">
+                    <img src="assets/images/icon-rock.svg" alt="user sign">
+                </div>
+            </div>
+
+            <div class="select__box computer__choice">
+                <p class="select__title">L'ordinateur a choisi</p>
+                <div id="computer__choice" class="choice__icon">
+                    <img src="assets/images/icon-scissors.svg" alt="computer sign">
+                </div>
+            </div>
+
+            <div class="result">
+                <p class="result__message">Gagné ! La pierre écrase les ciseaux</p>
+                <button class="button__replay btn" title="Rejouer">Rejouer</button>
+            </div>
+        </div>
+
+        <button type="button" class="btn play__button">Version bonus</button>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn rules" data-toggle="modal" data-target="#game_rule">
+            Règles du jeu
+        </button>
+
+        <!-- Modal -->
+        <div class="modal" id="game_rule" tabindex="-1" role="dialog" aria-labelledby="Rules" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="rules_title">Règles du jeu</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <img src="assets/images/image-rules.svg" alt="Règles du jeu shifumi">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Modal -->
+    </main>
+
+    <footer class="bg-dark text-white text-center fixed-bottom">
+        Copyright &copy; Emilie Maniglier - 2020
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="assets/js/app.js"></script>
 </body>
 </html>

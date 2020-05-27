@@ -1,0 +1,320 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-image: linear-gradient(to top, #020024, #052747, #07496b, #126e8c, #2d95aa);
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+header {
+    border: 2px solid white;
+    border-radius: 0.8em;
+    width: 60%;
+    margin: 2em auto 0.5em;
+    padding: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex: 2;
+}
+
+.score {
+    flex: 1;
+    background: white;
+    border-radius: 0.5em;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    width: 30%;
+    text-align: center;
+    color: #126e8c;
+    box-sizing: border-box;
+}
+
+
+.score p:nth-child(1){
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.score p:nth-child(2){
+    font-size: 0.8em;
+}
+.score p:last-child {
+    font-weight: 700;
+    font-size: 2.4em;
+    color: #07496b;
+} 
+
+main {
+    min-height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.sign__container {
+    position: relative;
+    text-align: center;
+}
+
+.icon {
+    width: fit-content;
+    background-color: white;
+    box-shadow: inset 2px 5px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    padding: 2em;
+}
+
+.icon:hover {
+    box-shadow: 0 0 5px 6px rgba(240, 236, 236, 0.6);
+}
+
+.paper {
+    border: 15px solid #0063e6;
+    position: absolute;
+    top: -15%;
+    left: -10%; 
+}
+
+.rock {
+    border: 15px solid #c41a1a;
+    position: absolute;
+    bottom: -10%;
+    left: 25%;
+}
+
+.scissors {
+    border: 15px solid #f5ce42;
+    position: absolute;
+    top: -15%;
+    right: -10%; 
+} 
+
+.lizard {
+    border: 15px solid #b3229f;
+    position: absolute;
+    bottom: -25%;
+    left: -4%;
+}
+
+.spock {
+    border: 15px solid #2ebf21;
+    position: absolute;
+    top: 15%;
+    left: -25%; 
+}
+
+.paper__bonus {
+    position: absolute;
+    top: 15%;
+    left: 80%;
+}
+
+.scissors__bonus {
+    position: absolute;
+    top: -25%;
+    left: 30%; 
+}
+
+.rock__bonus {
+    position: absolute;
+    bottom: -25%;
+    left: 60%;
+}
+
+.sign__select {
+    width: 70%;
+    display: flex;
+    justify-content: space-around; 
+    display: none;
+}
+
+.user__choice {
+    order : 0;
+}
+
+.computer__choice {
+    order : 1;
+} 
+
+.select__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.select__title {
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 2em;
+}
+
+.choice__icon {
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: inset 2px 5px 5px rgba(0, 0, 0, 0.4);
+    padding: 2.5rem;
+}
+
+.choice__icon img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.result {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em 2em;
+}
+
+.result__message {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.7em;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: white;
+}
+
+.button__replay {
+    text-transform: uppercase;
+    color: #db4444;
+    background-color: white;
+    border-radius: 0.5em;
+    font-size: 1.7em;
+}
+
+.rules {
+    border: 2px solid rgba(255,255,255, 0.5);
+    border-radius: 0.8em;
+    background-color: transparent;
+    padding: 1em;
+    color: white;
+    text-transform: uppercase;
+    position: fixed;
+    bottom: 8%;
+    right: 5%;
+}
+
+.rules:hover, .play__button:hover {
+    background-color: white;
+    color: #07496b;
+}
+
+.play__button {
+    border: 2px solid rgba(255,255,255, 0.5);
+    border-radius: 0.8em;
+    background-color: transparent;
+    outline: none;
+    padding: 1em;
+    color: white;
+    text-transform: uppercase;
+    position: fixed;
+    bottom: 8%;
+    left: 5%;
+}
+
+footer {
+    font-size: 0.9em;
+    padding: 0.8em 0;
+}
+
+@media screen and (max-width:375px) {
+    .choice__icon {
+        padding: 1.5em;
+    }
+
+    .select__title {
+        font-size: 1em;
+    }
+
+    .play__button, .rules {
+        font-size: 0.8em;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    header {
+        width: 80%;
+        height: 20%;
+        box-sizing: content-box;
+    }
+
+    .score p {
+        margin: 0;
+    }
+
+    .score p:nth-child(2) {
+        display: none;
+    }
+
+    .sign__diagram img {
+        width: 80%;
+    }
+
+    .icon {
+        padding: 1.2em;
+    }
+
+    .paper {
+        left: 0%;
+    }
+
+    .paper__bonus {
+        left: 65%;
+    }
+
+    .scissors {
+        right: 0%;
+    }
+
+    .rock {
+        bottom: -20%;
+        left: 30%;
+        padding: 1.5em;
+    }
+
+    .rock__bonus {
+        left: 53%;
+        bottom: -27%;
+    }
+
+    .spock {
+        top: 13%;
+        left: -7%;
+    }
+
+    .lizard {
+        bottom: -25%;
+        left: 3%;
+    }
+
+    .sign__select {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .result {
+        order : 1;
+    }
+
+    .result p {
+        font-size: 1.2em;
+    }
+
+    .button__replay {
+        font-size: 1.2em;
+    }
+}  
